@@ -1,9 +1,23 @@
-docker compose build fastapi
+# FastAPI
 
-docker compose up -d database
-docker compose up fastapi
 
-docker exec -it fastapi bash
-alembic revision --autogenerate -m ""
+### env setting
+```shell
+cp .env.sample .env
+```
+
+### docker build & run
+```shell
+docker compose build fastapi-server
+
+docker compose up -d fastapi-db fastapi-server fastapi-nginx
+```
+
+### alembic migration
+```shell
 alembic upgrade head
-alembic downgrade -1
+```
+
+### swagger
+> http://localhost/docs  
+> http://localhost/redoc

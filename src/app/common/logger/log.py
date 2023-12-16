@@ -53,7 +53,7 @@ class Logger:
         logger.add(
             sys.stdout,
             level="INFO",
-            format="<green>{time:MMMM D, YYYY > HH:mm:ss}</green> | <green>{level}</green> | <white>{message}</white>",
+            format="<green>{time:MMMM D, YYYY > HH:mm:ss}</green> | <green>{level}</green> | {message}",
             enqueue=True,
             backtrace=True,
             colorize=True,
@@ -63,7 +63,7 @@ class Logger:
         logger.add(
             sys.stdout,
             level="WARNING",
-            format="<yellow>{time:MMMM D, YYYY > HH:mm:ss}</yellow> | <yellow>{level}</yellow> | <white>{message}</white>",
+            format="<yellow>{time:MMMM D, YYYY > HH:mm:ss}</yellow> | <yellow>{level}</yellow> | {message}",
             enqueue=True,
             backtrace=True,
             colorize=True,
